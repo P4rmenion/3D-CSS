@@ -1,0 +1,359 @@
+.deck {
+    width: 200px;
+    height: 75px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(80px);
+
+    @media only screen and (max-width: 1023px) {
+        &:focus {  
+            .deck-front {
+                transition-timing-function: ease-in-out;
+                transition: transform 0.2s;
+                transform-origin: bottom center;
+                transform: rotateY(-185deg) rotateX(90deg) ;
+            }
+
+            .deck-content {
+                transition-timing-function: ease-in-out;
+                transition: transform 1.5s;
+                transform-origin: bottom;
+                transform: rotateX(90deg) rotateZ(5deg) translateY(70px);
+            }
+        }
+
+                    
+        .deck-top {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 75px;
+            left: 0;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateZ(5deg);
+            border-radius: 8px;
+        }
+
+        .deck-content {
+            transition-timing-function: ease-in-out;
+            transition: transform 0.2s;
+            transform-origin: bottom;
+            box-sizing: border-box;
+            width: 190px;
+            height: 200px;
+            position: absolute;
+            background-image: linear-gradient(to top,rgba(#fdf7e7, 1) 10%, rgba(black, 1));
+            border: black solid 2px;
+            bottom: 1px;
+            left: 5px;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateZ(5deg);
+            border-radius: 8px;
+            z-index: 20;
+
+            &-text {
+                font-family: 'Rock Salt';
+                position: absolute;
+                bottom: 0px;
+                left: 20px;
+                color: black;
+                font-size: 25px;
+            }
+        }
+
+        .deck-bottom {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 0;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateZ(5deg);
+            border-radius: 8px;
+        }
+
+        .deck-right {
+            box-sizing: border-box;
+            width: 200px;
+            height: 75px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 200px;
+            transform-origin: left;
+            transform: rotateY(85deg) translateX(-12px);
+            border-radius: 8px;
+        }
+
+        .deck-left {
+            box-sizing: border-box;
+            width: 200px;
+            height: 75px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 0px;
+            transform-origin: left;
+            transform: rotateY(85deg) translateX(12px);
+            border-radius: 8px;
+        }
+
+        .deck-front {
+            transition-timing-function: linear;
+            transition: height 1s, transform 1.5s;
+            box-sizing: border-box;
+            width: 200px;
+            height: 75px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-origin: bottom center;
+            transform: rotateY(-185deg);
+            border-radius: 8px;
+        }
+
+        &.black-white {
+            & > * {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .deck-top {
+                background-image: url('src/assets/paiheme-bw-desk.jpg');
+            }
+
+            .deck-bottom {
+                background-image: linear-gradient(to top,rgba(black, 0.2) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme-bw-desk.jpg');
+            }
+
+            .deck-front {
+                background-image: linear-gradient(to bottom,rgba(black, 0) 0%, rgba(black, 0.2)), url('src/assets/paiheme-bw-girl.jpg');
+            }   
+
+            .deck-right {
+                background-image: url('src/assets/paiheme-bw-girl.jpg');
+            }
+
+            .deck-left {
+                background-image: linear-gradient(to right ,rgba(black, 0) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme-bw-girl.jpg');
+            }
+        }
+
+        &.orange-black {
+            & > * {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .deck-top {
+                background-image: url('src/assets/paiheme-poster.webp');
+            }
+
+            .deck-bottom {
+                background-image: linear-gradient(to top,rgba(black, 0.2) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme-poster.webp');
+            }
+
+            .deck-front {
+                background-image: linear-gradient(to bottom,rgba(black, 0) 0%, rgba(black, 0.2)), url('src/assets/paiheme.jpg');
+            }
+
+            .deck-right {
+                background-image: url('src/assets/paiheme.jpg');
+            }
+
+            .deck-left {
+                background-image: linear-gradient(to right ,rgba(black, 0) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme.jpg');
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        width: 300px;
+        height: 100px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(80px);
+
+        &:hover {  
+            .deck-front {
+                transition-timing-function: ease-in-out;
+                transition: transform 0.2s;
+                transform-origin: bottom center;
+                transform: rotateY(-185deg) rotateX(90deg) ;
+            }
+
+            .deck-content {
+                transition-timing-function: ease-in-out;
+                transition: transform 1.5s;
+                transform-origin: bottom;
+                transform: rotateX(90deg) rotateZ(5deg) translateY(70px);
+            }
+        }
+
+                    
+        .deck-top {
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 100px;
+            left: 0;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateZ(5deg);
+            border-radius: 8px;
+        }
+
+        .deck-content {
+            transition-timing-function: ease-in-out;
+            transition: transform 0.2s;
+            transform-origin: bottom;
+            box-sizing: border-box;
+            width: 290px;
+            height: 300px;
+            position: absolute;
+            background-image: linear-gradient(to top,rgba(#fdf7e7, 1) 10%, rgba(black, 1));
+            border: black solid 2px;
+            bottom: 1px;
+            left: 5px;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateZ(5deg);
+            border-radius: 8px;
+            z-index: 20;
+
+            &-text {
+                font-family: 'Rock Salt';
+                position: absolute;
+                bottom: 0px;
+                left: 20px;
+                color: black;
+                font-size: 35px;
+            }
+        }
+
+        .deck-bottom {
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 0;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateZ(5deg);
+            border-radius: 8px;
+        }
+
+        .deck-right {
+            box-sizing: border-box;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 300px;
+            transform-origin: left;
+            transform: rotateY(85deg) translateX(-12px);
+            border-radius: 8px;
+        }
+
+        .deck-left {
+            box-sizing: border-box;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 0px;
+            transform-origin: left;
+            transform: rotateY(85deg) translateX(12px);
+            border-radius: 8px;
+        }
+
+        .deck-front {
+            transition-timing-function: linear;
+            transition: height 1s, transform 1.5s;
+            box-sizing: border-box;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            border: black solid 2px;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-origin: bottom center;
+            transform: rotateY(-185deg);
+            border-radius: 8px;
+        }
+
+        &.black-white {
+            & > * {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .deck-top {
+                background-image: url('src/assets/paiheme-bw-desk.jpg');
+            }
+
+            .deck-bottom {
+                background-image: linear-gradient(to top,rgba(black, 0.2) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme-bw-desk.jpg');
+            }
+
+            .deck-front {
+                background-image: linear-gradient(to bottom,rgba(black, 0) 0%, rgba(black, 0.2)), url('src/assets/paiheme-bw-girl.jpg');
+            }   
+
+            .deck-right {
+                background-image: url('src/assets/paiheme-bw-girl.jpg');
+            }
+
+            .deck-left {
+                background-image: linear-gradient(to right ,rgba(black, 0) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme-bw-girl.jpg');
+            }
+        }
+
+        &.orange-black {
+            & > * {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .deck-top {
+                background-image: url('src/assets/paiheme-poster.webp');
+            }
+
+            .deck-bottom {
+                background-image: linear-gradient(to top,rgba(black, 0.2) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme-poster.webp');
+            }
+
+            .deck-front {
+                background-image: linear-gradient(to bottom,rgba(black, 0) 0%, rgba(black, 0.2)), url('src/assets/paiheme.jpg');
+            }
+
+            .deck-right {
+                background-image: url('src/assets/paiheme.jpg');
+            }
+
+            .deck-left {
+                background-image: linear-gradient(to right ,rgba(black, 0) 0%, rgba(black, 0.5) 30%), url('src/assets/paiheme.jpg');
+            }
+        }
+    }
+} 
